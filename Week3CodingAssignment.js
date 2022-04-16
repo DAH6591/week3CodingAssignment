@@ -28,6 +28,7 @@ for (i=0; i < 9; i++){
 console.log(average);
 
 /* 2. Create an array called names that contains the following values: ‘Sam’, ‘Tommy’, ‘Tim’, ‘Sally’, ‘Buck’, ‘Bob’. */
+
 var names = ['Sam', 'Tommy', 'Tim', 'Sally', 'Buck', 'Bob'];
 
 /* 2a. Use a loop to iterate through the array and calculate the average number of letters per name. Print the result to the console.*/
@@ -71,4 +72,62 @@ for (i=0; i < names.length; i++){
     nameLengths.push(names[i].length);  
 }
 console.log(nameLengths);
+
+/* 6. Write a loop to iterate over the nameLengths array and calculate the sum of all the elements in the array.
+ Print the result to the console. */
+
+ var sum = 0;
+ for (i=0; i < names.length; i++){
+    sum += nameLengths[i];
+ }
+ console.log(sum);
+
+ /* 7. Write a function that takes two parameters, word and n, as arguments and returns the word concatenated to
+  itself n number of times. (i.e. if I pass in ‘Hello’ and 3, I would expect the function to return ‘HelloHelloHello’).*/
+
+  function repeatString (word, n){  // I googled how to log out the same string multiple times and "repeat" info came up.
+        return word.repeat(n);
+  }
+  console.log(repeatString('GoAvs', 3));
+
+ /* 8. Write a function that takes two parameters, firstName and lastName, and returns a full name
+  (the full name should be the first and the last name separated by a space).*/
+
+  function getFullName (firstName, lastName){
+    console.log(firstName + ' ' + lastName);
+  }
+  getFullName('Nathan', 'MacKinnon');
+
+  /*9. Write a function that takes an array of numbers and returns true if the sum of all the numbers
+   in the array is greater than 100.
+  */
+
+  var numbers = [10, 30, 50, 20];
+  var sumNumbers = 0;
+
+  function toughProblem(numbers){
+  for (i=0; i < numbers.length; i++){
+    sumNumbers += numbers[i];
+
+      if (sumNumbers > 100){
+      console.log('true');   
+    }
+  }
+}
+toughProblem(numbers);
+
+/*10. Write a function that takes an array of numbers and
+ returns the average of all the elements in the array.
+*/
+var moreNumbers = [2,4,6,8];
+var sumMoreNumbers = 0;
+
+function friedBrain(moreNumbers){
+for (i=0; i < moreNumbers.length; i++){
+    sumMoreNumbers += moreNumbers[i];
+    var avg = sumMoreNumbers/moreNumbers.length;
+}
+console.log(avg);
+}
+friedBrain(moreNumbers);
 
