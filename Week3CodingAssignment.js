@@ -43,8 +43,8 @@ console.log(average);
  and print the result to the console. */
 
  var answer = ' ';
- for (i = 0; i < 6; i++) {
-    answer = answer + ' ' + names[i];
+ for (i = 0; i < names.length; i++) {
+      answer = answer + ' ' + names[i];
  }
  console.log(answer);
 
@@ -123,7 +123,7 @@ var moreNumbers = [2,4,6,8];
 var sumMoreNumbers = 0;
 
 function friedBrain(moreNumbers){
-for (i=0; i < moreNumbers.length; i++){
+  for (i=0; i < moreNumbers.length; i++){
     sumMoreNumbers += moreNumbers[i];
     var avg = sumMoreNumbers/moreNumbers.length;
 }
@@ -131,3 +131,84 @@ console.log(avg);
 }
 friedBrain(moreNumbers);
 
+/* 11.Write a function that takes two arrays of numbers and returns true if the average
+ of the elements in the first array is greater than the average of the elements in the second array..*/
+
+ var firstSet = [12, 14, 16, 18];
+ sumFirstSet = 0;
+
+ for (i = 0; i < firstSet.length; i++){
+  sumFirstSet += firstSet[i];
+  var avgFirstSet = sumFirstSet / (firstSet.length);
+ }
+  console.log(sumFirstSet, avgFirstSet); //checking to see if math is correct
+
+  var secondSet = [15, 17, 19, 21];
+  sumSecondSet = 0;  
+
+  for (i = 0; i < secondSet.length; i++){
+    sumSecondSet += secondSet[i];
+    var avgSecondSet = sumSecondSet / (secondSet.length);
+  }  
+  console.log(sumSecondSet, avgSecondSet); //checking to see if math is correct
+
+  function compareAvgOfSets (firstSet, secondSet){
+    if (avgFirstSet > avgSecondSet){
+      console.log('true');
+    } else {
+      console.log('false');
+    }
+  }
+  compareAvgOfSets(firstSet, secondSet);
+
+  /*12.	Write a function called willBuyDrink that takes a boolean isHotOutside, 
+  and a number moneyInPocket, and returns true if it is hot outside and
+   if moneyInPocket is greater than 10.50.
+  */
+ 
+ var isHotOutside;
+ var moneyInPocket;
+
+   function willBuyDrink (isHotOutside, moneyInPocket){
+      if (isHotOutside > 80 && moneyInPocket > 10.50){
+        return true;
+     } else {
+       return false;
+     }
+
+ }
+ console.log(willBuyDrink(75, 9));
+
+ /*13.Create a function of your own that solves a problem.
+  In comments, write what the function does and why you created it.
+ */
+
+  /* I would like to compare: a) miles I ran for the current week to miles I ran for the previous week and 
+     b) number of cross training workouts done for the curent week to number of cross training workouts done for the previous week.
+     If my miles ran and number of cross training works done for the current week are greater than miles ran and number of
+     cross training workouts done for the previous week, then it will be OK for me to begin next week's training.
+     If not, then I will repeat the training for the current week.
+  */
+  
+     /* I created a function called beginNextTrainingWeek. The function compares miles run and number of cross training workouts
+     for the current week to miles run and number of cross training workouts for the previous week. If current week's miles and workouts
+     are greater than those for the previous week's workouts, then console logs 'OK to begin next training week'. If not, then console logs
+     'Repeat training for current week'. I declared two variables for data from the previous week and used the prompt command to
+     allow me to input my data from the previous week. I also declared variables that are the parameters within the function. This allows
+     me to enter my data for the current week into the statement for calling the function.
+    */
+  let milesRanLastWeek = prompt('Number of miles ran last week:');
+  let numberCrossTrainLastWeek = prompt('Number of cross training workouts last week:')
+  let milesRanThisWeek; 
+  let numberCrossTrainThisWeek; 
+  
+  function beginNextTrainingWeek (milesRanThisWeek, numberCrossTrainThisWeek){
+      if (milesRanThisWeek > milesRanLastWeek && numberCrossTrainThisWeek > numberCrossTrainLastWeek){
+        
+        console.log('OK to begin next training week');
+      } else {
+         
+          console.log('Repeat training for current week');
+        }
+      }  
+beginNextTrainingWeek(25, 3);
